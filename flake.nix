@@ -1,19 +1,29 @@
 {
+  description = "eframe devShell";
+
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    utils.url = "github:numtide/flake-utils";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    rust-overlay.url = "github:oxalica/rust-overlay";
+    flake-utils.url = "github:numtide/flake-utils";
   };
 
-  outputs = { self, nixpkgs, utils }:
-    utils.lib.eachDefaultSystem (system:
+  outputs = { self, nixpkgs, rust-overlay, flake-utils, ... }:
+    flake-utils.lib.eachDefaultSystem (system:
       let
-        pkgs = import nixpkgs { inherit system; };
+        overlays = [ (import rust-overlay) ];
+        pkgs = import nixpkgs { inherit system overlays; };
       in
-      {
-        devShell = with pkgs; mkShell {
-          buildInputs = [ cargo rustc rustfmt trunk rustPackages.clippy ];
-          RUST_SRC_PATH = rustPlatform.rustLibSrc;
+      with pkgs; {
+        devShells.default = mkShell rec {
+          buildInputs = [
+            # Rust
+            (rust-bin.stable.latest.default.override
+              {
+                extensions = [ "rust-src" "rust-analyzer" ];
+                targets = [ "wasm32-unknown-unknown" ];
+              })
+            trunk
+          ];
         };
-      }
-    );
+      });
 }
