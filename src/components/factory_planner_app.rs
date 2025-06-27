@@ -3,7 +3,7 @@ use std::collections::HashSet;
 use leptos::prelude::*;
 use reactive_stores::Store;
 
-use crate::{components::breakdown::BreakdownView, recipe::Recipe, AppStore, AppStoreStoreFields};
+use crate::{components::breakdown::BreakdownView, AppStore, AppStoreStoreFields};
 
 #[component]
 pub fn FactoryPlannerApp() -> impl IntoView {
@@ -25,7 +25,13 @@ pub fn FactoryPlannerApp() -> impl IntoView {
             store
                 .recipes()
                 .into_iter()
-                .flat_map(|r| r.get().outputs.iter().map(|o| o.item.clone()).collect::<Vec<_>>())
+                .flat_map(|r| {
+                    r.get()
+                        .outputs
+                        .iter()
+                        .map(|o| o.item.clone())
+                        .collect::<Vec<_>>()
+                })
                 .filter(|name| name.to_lowercase().contains(&search_val.to_lowercase()))
                 .filter(|name| !current_outputs.contains(name))
                 .collect()
@@ -206,9 +212,7 @@ pub fn FactoryPlannerApp() -> impl IntoView {
                             </div>
                             <h2 class="text-xl font-semibold mt-8 mb-2">Breakdown</h2>
                             <div class="overflow-x-auto">
-                                <BreakdownView
-                                    outputs=outputs
-                                />
+                                <BreakdownView outputs=outputs />
                             </div>
                         </div>
                         <div
@@ -237,34 +241,36 @@ pub fn FactoryPlannerApp() -> impl IntoView {
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        {store.recipes()
+                                        {store
+                                            .recipes()
                                             .into_iter()
                                             .filter(|r| {
                                                 let filter = recipe_output_filter.get().to_lowercase();
                                                 if filter.is_empty() {
                                                     true
                                                 } else {
-                                                    r.get().outputs
+                                                    r.get()
+                                                        .outputs
                                                         .iter()
                                                         .any(|o| o.item.to_lowercase().contains(&filter))
                                                 }
                                             })
                                             .map(|r| {
                                                 let name = r.get().name.clone();
-                                                let outputs = r.get()
+                                                let outputs = r
+                                                    .get()
                                                     .outputs
                                                     .iter()
                                                     .map(|o| o.item.clone())
                                                     .collect::<Vec<_>>()
                                                     .join(", ");
-                                                let inputs = r.get()
+                                                let inputs = r
+                                                    .get()
                                                     .inputs
                                                     .iter()
                                                     .map(|i| i.item.clone())
                                                     .collect::<Vec<_>>()
                                                     .join(", ");
-                                                let name_for_checkbox = name.clone();
-                                                let name_for_on_input = name.clone();
                                                 view! {
                                                     <>
                                                         <tr>
@@ -272,9 +278,7 @@ pub fn FactoryPlannerApp() -> impl IntoView {
                                                                 <input
                                                                     type="checkbox"
                                                                     class="checkbox"
-                                                                    checked=move || {
-                                                                        enabled_recipes.get().contains(&name_for_checkbox)
-                                                                    }
+                                                                    checked=move || { enabled_recipes.get().contains(&name) }
                                                                 />
                                                             </td>
                                                             <td>{r.get().name.clone()}</td>
@@ -301,7 +305,8 @@ pub fn FactoryPlannerApp() -> impl IntoView {
                                                                                         </tr>
                                                                                     </thead>
                                                                                     <tbody>
-                                                                                        {r.get()
+                                                                                        {r
+                                                                                            .get()
                                                                                             .outputs
                                                                                             .iter()
                                                                                             .map(|o| {
@@ -330,7 +335,8 @@ pub fn FactoryPlannerApp() -> impl IntoView {
                                                                                         </tr>
                                                                                     </thead>
                                                                                     <tbody>
-                                                                                        {r.get()
+                                                                                        {r
+                                                                                            .get()
                                                                                             .inputs
                                                                                             .iter()
                                                                                             .map(|i| {
