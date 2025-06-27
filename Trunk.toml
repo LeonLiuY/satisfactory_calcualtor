@@ -1,0 +1,6 @@
+# Trunk pipeline for Tailwind CSS
+
+# This will run Tailwind CLI to build tailwind.output.css from tailwind.input.css whenever trunk serve/build runs.
+[[hooks]]
+stage = "build"
+command = "./run-tailwind.sh"

@@ -1,29 +1,53 @@
 {
-  description = "eframe devShell";
-
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    flake-parts.url = "github:hercules-ci/flake-parts";
+    systems.url = "github:nix-systems/default";
+
     rust-overlay.url = "github:oxalica/rust-overlay";
-    flake-utils.url = "github:numtide/flake-utils";
+    treefmt-nix.url = "github:numtide/treefmt-nix";
   };
 
-  outputs = { self, nixpkgs, rust-overlay, flake-utils, ... }:
-    flake-utils.lib.eachDefaultSystem (system:
-      let
-        overlays = [ (import rust-overlay) ];
-        pkgs = import nixpkgs { inherit system overlays; };
-      in
-      with pkgs; {
-        devShells.default = mkShell rec {
-          buildInputs = [
-            # Rust
+  outputs = inputs:
+    inputs.flake-parts.lib.mkFlake { inherit inputs; } {
+      systems = import inputs.systems;
+      imports = [
+        inputs.treefmt-nix.flakeModule
+      ];
+      perSystem = { config, self', pkgs, lib, system, ... }: {
+        _module.args.pkgs = import inputs.nixpkgs {
+          inherit system;
+          overlays = [
+            inputs.rust-overlay.overlays.default
+          ];
+        };
+
+        # Add your auto-formatters here.
+        # cf. https://numtide.github.io/treefmt/
+        treefmt.config = {
+          projectRootFile = "flake.nix";
+          programs = {
+            nixpkgs-fmt.enable = true;
+            rustfmt.enable = true;
+            leptosfmt.enable = true;
+          };
+        };
+
+        devShells.default = pkgs.mkShell {
+          inputsFrom = [
+            config.treefmt.build.devShell
+          ];
+          nativeBuildInputs = with pkgs; [
             (rust-bin.stable.latest.default.override
               {
                 extensions = [ "rust-src" "rust-analyzer" ];
                 targets = [ "wasm32-unknown-unknown" ];
               })
             trunk
-          ];
+            tailwindcss
+            nodejs
+          ];  
         };
-      });
+      };
+    };
 }

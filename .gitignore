@@ -1,5 +1,6 @@
 .direnv/
-
+dist/
 # Added by cargo
 
 /target
+tailwind.output.css
