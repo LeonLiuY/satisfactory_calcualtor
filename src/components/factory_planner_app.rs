@@ -22,6 +22,8 @@ pub fn FactoryPlannerApp() -> impl IntoView {
         if search_val.is_empty() {
             Vec::new()
         } else {
+            use std::collections::HashSet;
+            let mut seen = HashSet::new();
             store
                 .recipes()
                 .into_iter()
@@ -34,6 +36,7 @@ pub fn FactoryPlannerApp() -> impl IntoView {
                 })
                 .filter(|name| name.to_lowercase().contains(&search_val.to_lowercase()))
                 .filter(|name| !current_outputs.contains(name))
+                .filter(|name| seen.insert(name.clone())) // only keep first occurrence
                 .collect()
         }
     });
