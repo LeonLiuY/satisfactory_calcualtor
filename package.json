@@ -3,5 +3,7 @@
   "private": true,
   "devDependencies": {
     "daisyui": "^4.10.2"
+  },
+  "dependencies": {
   }
 }

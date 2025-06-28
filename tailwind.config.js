@@ -9,4 +9,5 @@ module.exports = {
   plugins: [
     require("daisyui")
   ],
+  // If using Nix-built daisyui, ensure NODE_PATH is set in your build (flake.nix)
 }

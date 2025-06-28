@@ -33,20 +33,24 @@
           };
         };
 
-        devShells.default = pkgs.mkShell {
+        devShells.default = let
+          buildScript = pkgs.writeScriptBin "build" ''
+            npm install
+            trunk build --release
+          '';
+        in pkgs.mkShell {
           inputsFrom = [
             config.treefmt.build.devShell
           ];
-          nativeBuildInputs = with pkgs; [
-            (rust-bin.stable.latest.default.override
-              {
-                extensions = [ "rust-src" "rust-analyzer" ];
-                targets = [ "wasm32-unknown-unknown" ];
-              })
-            trunk
-            tailwindcss
-            nodejs
-          ];  
+          nativeBuildInputs = [
+            (pkgs.rust-bin.stable.latest.default.override {
+              extensions = [ "rust-src" "rust-analyzer" ];
+              targets = [ "wasm32-unknown-unknown" ];
+            })
+            pkgs.trunk
+            pkgs.nodejs
+            buildScript
+          ];
         };
       };
     };

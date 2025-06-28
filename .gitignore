@@ -3,4 +3,6 @@ dist/
 # Added by cargo
 
 /target
+node_modules/
+# Ignore npm package lock files
 tailwind.output.css
