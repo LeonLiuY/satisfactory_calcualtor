@@ -54,7 +54,6 @@ pub struct SatisfactoryClass {
     pub class_name: String,
     #[serde(rename = "mDisplayName")]
     pub display_name: Option<String>,
-    // For recipes: now as Option<String> for tuple parsing
     #[serde(rename = "mIngredients")]
     pub m_ingredients: Option<String>,
     #[serde(rename = "mProduct")]
@@ -67,6 +66,8 @@ pub struct SatisfactoryClass {
         deserialize_with = "de_str_or_float_opt"
     )]
     pub m_manufactoring_duration: Option<f64>,
+    #[serde(rename = "mPowerConsumption")]
+    pub m_power_consumption: Option<String>,
 }
 
 #[derive(Debug, Clone)]
@@ -75,23 +76,14 @@ pub struct SatisfactoryIngredientEntry {
     pub amount: f64,
 }
 
-fn clean_name(raw: &str) -> String {
-    raw.trim_start_matches("Desc_")
-        .trim_start_matches("Build_")
-        .trim_start_matches("Recipe_")
-        .trim_start_matches("TempRecipe_")
-        .trim_end_matches("_C")
-        .replace('_', " ")
-}
-
 pub fn satisfactory_json_to_recipe(json: &SatisfactoryJsonRecipe) -> Recipe {
     Recipe {
-        name: clean_name(&json.display_name),
+        name: json.display_name.clone(),
         inputs: json
             .ingredients
             .iter()
             .map(|i| ItemStack {
-                item: clean_name(&i.item),
+                item: i.item.clone(),
                 quantity: i.amount.round() as u32,
             })
             .collect(),
@@ -99,7 +91,7 @@ pub fn satisfactory_json_to_recipe(json: &SatisfactoryJsonRecipe) -> Recipe {
             .products
             .iter()
             .map(|i| ItemStack {
-                item: clean_name(&i.item),
+                item: i.item.clone(),
                 quantity: i.amount.round() as u32,
             })
             .collect(),
@@ -107,8 +99,7 @@ pub fn satisfactory_json_to_recipe(json: &SatisfactoryJsonRecipe) -> Recipe {
             name: json
                 .produced_in
                 .get(0)
-                .map(|s| clean_name(s))
-                .unwrap_or_default(),
+                .unwrap().to_string(),
         },
         time: (json.duration * 1000.0) as u32,
         enabled: !json.alternate.unwrap_or(false), // Default: alternate recipes are disabled
@@ -201,7 +192,6 @@ pub fn load_satisfactory_recipes_from_json(
                 let machine_name = filtered_machines
                     .get(0)
                     .and_then(|mc| display_name_map.get(*mc).cloned())
-                    .or_else(|| filtered_machines.get(0).map(|mc| clean_name(mc)))
                     .unwrap_or_default();
                 let recipe_display = class
                     .display_name
@@ -226,7 +216,7 @@ pub fn load_satisfactory_recipes_from_json(
                             let item_name = display_name_map
                                 .get(&ing.item_class)
                                 .cloned()
-                                .unwrap_or_else(|| clean_name(&ing.item_class));
+                                .unwrap();
                             ItemStack {
                                 item: item_name.clone(),
                                 quantity: calc_quantity(item_name, ing.amount.round() as u32),
@@ -239,7 +229,7 @@ pub fn load_satisfactory_recipes_from_json(
                             let item_name = display_name_map
                                 .get(&prod.item_class)
                                 .cloned()
-                                .unwrap_or_else(|| clean_name(&prod.item_class));
+                                .unwrap();
                             ItemStack {
                                 item: item_name.clone(),
                                 quantity: calc_quantity(item_name, prod.amount.round() as u32),
@@ -304,6 +294,24 @@ fn parse_produced_in_tuple(s: &str) -> Vec<String> {
         }
     }
     result
+}
+
+/// Parse machine power consumption from Satisfactory assets
+pub fn build_machine_power_map_from_assets(assets: &[SatisfactoryAsset]) -> std::collections::HashMap<String, f64> {
+    let mut map = std::collections::HashMap::new();
+    for asset in assets {
+        for class in &asset.classes {
+            if let Some(power_str) = &class.m_power_consumption {
+                if let Ok(power) = power_str.parse::<f64>() {
+                    if let Some(name) = &class.display_name {
+                        map.insert(name.clone(), power);
+                    }
+                }
+            }
+        }
+    }
+    println!("{:?}", map);
+    map
 }
 
 #[cfg(test)]
@@ -380,6 +388,19 @@ mod tests {
         building_counts_vec.sort_by(|a, b| b.1.cmp(&a.1));
         for (building, count) in building_counts_vec {
             println!("{:<30} : {}", building, count);
+        }
+    }
+
+    #[test]
+    fn test_machine_power_map() {
+        let path = "assets/satisfactory_en-US.json";
+        let json_str = std::fs::read_to_string(path).expect("Failed to read JSON file");
+        let assets: Vec<SatisfactoryAsset> = serde_json::from_str(&json_str).expect("Failed to parse JSON");
+        let machine_power_map = build_machine_power_map_from_assets(&assets);
+        assert!(!machine_power_map.is_empty(), "Machine power map should not be empty");
+        // Print a few entries for manual inspection
+        for (machine, power) in machine_power_map.iter() {
+            println!("{}: {} MW", machine, power);
         }
     }
 }
