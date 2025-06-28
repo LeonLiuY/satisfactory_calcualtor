@@ -2,8 +2,7 @@
   "name": "factory-planner-tailwind-plugins",
   "private": true,
   "devDependencies": {
-    "daisyui": "^4.10.2"
-  },
-  "dependencies": {
+    "daisyui": "^4.10.2",
+    "wrangler": "^4.22.0"
   }
 }

@@ -1,4 +1,5 @@
 name = "satisfactory-calculator"
+compatibility_date = "2025-06-28"
 
 [assets]
 directory = "./dist"
