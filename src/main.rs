@@ -18,7 +18,7 @@ struct AppStore {
 #[component]
 fn App() -> impl IntoView {
     let recipes =
-        load_satisfactory_recipes_from_json(include_str!("../assets/satisfactory_recipes.json"))
+        load_satisfactory_recipes_from_json(include_str!("../assets/satisfactory_en-US.json"))
             .unwrap_or_default();
     let store = Store::new(AppStore { recipes: recipes });
     provide_context(store);

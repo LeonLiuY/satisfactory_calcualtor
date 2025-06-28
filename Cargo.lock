@@ -333,6 +333,7 @@ dependencies = [
  "leptos",
  "petgraph",
  "reactive_stores",
+ "regex",
  "serde",
  "serde_json",
 ]

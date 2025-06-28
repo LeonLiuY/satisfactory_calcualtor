@@ -1,6 +1,5 @@
 pub mod recipe;
 
-use crate::adapters::satisfactory_adapter::load_satisfactory_recipes_from_json;
 use crate::model::recipe::Recipe;
 
 /// An empty function for testing purposes.
@@ -8,34 +7,39 @@ pub fn empty_function() {}
 
 /// Raw resource availability and WP assignment (copied from analysis_tab.rs)
 pub const RESOURCE_AVAIL: [(&str, f64); 15] = [
-    ("OreBauxite", 12300.0),
-    ("OreGold", 15000.0),
+    ("Bauxite", 12300.0),
+    ("Caterium Ore", 15000.0),
     ("Coal", 42300.0),
-    ("OreCopper", 36900.0),
-    ("LiquidOil", 12600.0),
-    ("OreIron", 92100.0),
-    ("Stone", 69900.0),
-    ("NitrogenGas", 12000.0),
-    ("RawQuartz", 13500.0),
+    ("Copper Ore", 36900.0),
+    ("Crude Oil", 12600.0),
+    ("Iron Ore", 92100.0),
+    ("Limestone", 69900.0),
+    ("Nitrogen Gas", 12000.0),
+    ("Raw Quartz", 13500.0),
     ("Sulfur", 10800.0),
-    ("OreUranium", 2100.0),
+    ("Uranium", 2100.0),
     ("SAM", 10200.0),
     ("Water", f64::INFINITY),
-    ("QuantumEnergy", f64::INFINITY),
-    ("DarkEnergy", f64::INFINITY),
+    ("Excited Photonic Matter", f64::INFINITY),
+    ("Dark Matter Residue", f64::INFINITY),
 ];
 
 pub fn resource_weight_points() -> Vec<(String, f64)> {
-    let iron_avail = RESOURCE_AVAIL.iter().find(|(n, _)| *n == "OreIron").map(|(_, v)| *v).unwrap_or(1.0);
-    RESOURCE_AVAIL.iter().map(|(name, avail)| {
-        (name.to_string(), iron_avail / *avail)
-    }).collect()
+    let most_common = RESOURCE_AVAIL.iter()
+        .filter(|(_, avail)| avail.is_finite())
+        .max_by(|a, b| a.1.partial_cmp(&b.1).unwrap_or(std::cmp::Ordering::Equal))
+        .unwrap().1;
+
+    RESOURCE_AVAIL.iter()
+        .map(|(name, avail)| (name.to_string(), most_common / *avail))
+        .collect()
 }
 
 /// Compute minimal WP for all items using fixed-point iteration (handles cycles)
 pub fn compute_item_weight_points(recipes: &[Recipe]) -> std::collections::HashMap<String, f64> {
     use std::collections::{HashMap, HashSet};
     let resource_weights = resource_weight_points();
+    println!("Resource weights: {:?}", resource_weights);
     let raw_resource_names: HashSet<String> = RESOURCE_AVAIL.iter().map(|(name, _)| name.to_string()).collect();
     // Initialize WP for all raw resources
     let mut item_weights: HashMap<String, f64> = HashMap::new();
@@ -95,6 +99,8 @@ pub fn compute_item_weight_points(recipes: &[Recipe]) -> std::collections::HashM
 
 #[cfg(test)]
 mod tests {
+    use crate::adapters::satisfactory_adapter::load_satisfactory_recipes_from_json;
+
     use super::*;
 
     #[test]
@@ -105,9 +111,18 @@ mod tests {
 
     #[test]
     fn test_print_item_weight_points() {
-        let path = "assets/satisfactory_recipes.json";
+        let path = "assets/satisfactory_en-US.json";
         let json_str = std::fs::read_to_string(path).expect("Failed to read JSON file");
         let recipes = load_satisfactory_recipes_from_json(&json_str).expect("Failed to load recipes");
+        recipes.iter().for_each(|r| {
+            println!("Recipe: {}", r.name);
+            for input in &r.inputs {
+                println!("  Input: {} x {}", input.item, input.quantity);
+            }
+            for output in &r.outputs {
+                println!("  Output: {} x {}", output.item, output.quantity);
+            }
+        });
         let item_weights = compute_item_weight_points(&recipes);
         let mut items: Vec<_> = item_weights.iter().collect();
         items.sort_by(|a, b| a.0.cmp(b.0));

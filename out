@@ -1,0 +1,1332 @@
+    Blocking waiting for file lock on build directory
+   Compiling factory-planner v0.1.0 (/home/liu/projects/factory-planner)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 2.72s
+     Running unittests src/main.rs (target/debug/deps/factory_planner-46755682664d18dd)
+
+running 1 test
+Recipe: Iron Plate
+  Input: Iron Ingot x 3
+  Output: Iron Plate x 2
+Recipe: Iron Rod
+  Input: Iron Ingot x 1
+  Output: Iron Rod x 1
+Recipe: Iron Ingot
+  Input: Iron Ore x 1
+  Output: Iron Ingot x 1
+Recipe: Alternate: Nitro Rocket Fuel
+  Input: Fuel x 4000
+  Input: Nitrogen Gas x 3000
+  Input: Sulfur x 4
+  Input: Coal x 2
+  Output: Rocket Fuel x 6000
+  Output: Compacted Coal x 1
+Recipe: Rocket Fuel
+  Input: Turbofuel x 6000
+  Input: Nitric Acid x 1000
+  Output: Rocket Fuel x 10000
+  Output: Compacted Coal x 1
+Recipe: Packaged Rocket Fuel
+  Input: Rocket Fuel x 2000
+  Input: Empty Fluid Tank x 1
+  Output: Packaged Rocket Fuel x 1
+Recipe: Unpackage Rocket Fuel
+  Input: Packaged Rocket Fuel x 1
+  Output: Rocket Fuel x 2000
+  Output: Empty Fluid Tank x 1
+Recipe: Alternate: Dark-Ion Fuel
+  Input: Packaged Rocket Fuel x 12
+  Input: Dark Matter Crystal x 4
+  Output: Ionized Fuel x 10000
+  Output: Compacted Coal x 2
+Recipe: Dark Matter Residue
+  Input: Reanimated SAM x 5
+  Output: Dark Matter Residue x 10000
+Recipe: Excited Photonic Matter
+  Output: Excited Photonic Matter x 10000
+Recipe: Dark Matter Crystal
+  Input: Diamonds x 1
+  Input: Dark Matter Residue x 5000
+  Output: Dark Matter Crystal x 1
+Recipe: Superposition Oscillator
+  Input: Dark Matter Crystal x 6
+  Input: Crystal Oscillator x 1
+  Input: Alclad Aluminum Sheet x 9
+  Input: Excited Photonic Matter x 25000
+  Output: Superposition Oscillator x 1
+  Output: Dark Matter Residue x 25000
+Recipe: Neural-Quantum Processor
+  Input: Time Crystal x 5
+  Input: Supercomputer x 1
+  Input: Ficsite Trigon x 15
+  Input: Excited Photonic Matter x 25000
+  Output: Neural-Quantum Processor x 1
+  Output: Dark Matter Residue x 25000
+Recipe: AI Expansion Server
+  Input: Magnetic Field Generator x 1
+  Input: Neural-Quantum Processor x 1
+  Input: Superposition Oscillator x 1
+  Input: Excited Photonic Matter x 25000
+  Output: AI Expansion Server x 1
+  Output: Dark Matter Residue x 25000
+Recipe: Ionized Fuel
+  Input: Rocket Fuel x 16000
+  Input: Power Shard x 1
+  Output: Ionized Fuel x 16000
+  Output: Compacted Coal x 2
+Recipe: Packaged Ionized Fuel
+  Input: Ionized Fuel x 4000
+  Input: Empty Fluid Tank x 2
+  Output: Packaged Ionized Fuel x 2
+Recipe: Unpackage Ionized Fuel
+  Input: Packaged Ionized Fuel x 2
+  Output: Ionized Fuel x 4000
+  Output: Empty Fluid Tank x 2
+Recipe: Alternate: Turbo Diamonds
+  Input: Coal x 30
+  Input: Packaged Turbofuel x 2
+  Output: Diamonds x 3
+Recipe: SAM Fluctuator
+  Input: Reanimated SAM x 6
+  Input: Wire x 5
+  Input: Steel Pipe x 3
+  Output: SAM Fluctuator x 1
+Recipe: Ficsite Trigon
+  Input: Ficsite Ingot x 1
+  Output: Ficsite Trigon x 3
+Recipe: Ficsite Ingot (Iron)
+  Input: Reanimated SAM x 4
+  Input: Iron Ingot x 24
+  Output: Ficsite Ingot x 1
+Recipe: Time Crystal
+  Input: Diamonds x 2
+  Output: Time Crystal x 1
+Recipe: Diamonds
+  Input: Coal x 20
+  Output: Diamonds x 1
+Recipe: Reanimated SAM
+  Input: SAM x 4
+  Output: Reanimated SAM x 1
+Recipe: Biochemical Sculptor
+  Input: Assembly Director System x 1
+  Input: Ficsite Trigon x 80
+  Input: Water x 20000
+  Output: Biochemical Sculptor x 4
+Recipe: Ficsite Ingot (Aluminum)
+  Input: Reanimated SAM x 2
+  Input: Aluminum Ingot x 4
+  Output: Ficsite Ingot x 1
+Recipe: Ficsite Ingot (Caterium)
+  Input: Reanimated SAM x 3
+  Input: Caterium Ingot x 4
+  Output: Ficsite Ingot x 1
+Recipe: Bauxite (Caterium)
+  Input: Reanimated SAM x 1
+  Input: Caterium Ore x 15
+  Output: Bauxite x 12
+Recipe: Bauxite (Copper)
+  Input: Reanimated SAM x 1
+  Input: Copper Ore x 18
+  Output: Bauxite x 12
+Recipe: Caterium Ore (Copper)
+  Input: Reanimated SAM x 1
+  Input: Copper Ore x 15
+  Output: Caterium Ore x 12
+Recipe: Caterium Ore (Quartz)
+  Input: Reanimated SAM x 1
+  Input: Raw Quartz x 12
+  Output: Caterium Ore x 12
+Recipe: Coal (Iron)
+  Input: Reanimated SAM x 1
+  Input: Iron Ore x 18
+  Output: Coal x 12
+Recipe: Coal (Limestone)
+  Input: Reanimated SAM x 1
+  Input: Limestone x 36
+  Output: Coal x 12
+Recipe: Copper Ore (Quartz)
+  Input: Reanimated SAM x 1
+  Input: Raw Quartz x 10
+  Output: Copper Ore x 12
+Recipe: Copper Ore (Sulfur)
+  Input: Reanimated SAM x 1
+  Input: Sulfur x 12
+  Output: Copper Ore x 12
+Recipe: Iron Ore (Limestone)
+  Input: Reanimated SAM x 1
+  Input: Limestone x 24
+  Output: Iron Ore x 12
+Recipe: Limestone (Sulfur)
+  Input: Reanimated SAM x 1
+  Input: Sulfur x 2
+  Output: Limestone x 12
+Recipe: Nitrogen Gas (Bauxite)
+  Input: Reanimated SAM x 1
+  Input: Bauxite x 10
+  Output: Nitrogen Gas x 12000
+Recipe: Nitrogen Gas (Caterium)
+  Input: Reanimated SAM x 1
+  Input: Caterium Ore x 12
+  Output: Nitrogen Gas x 12000
+Recipe: Raw Quartz (Bauxite)
+  Input: Reanimated SAM x 1
+  Input: Bauxite x 10
+  Output: Raw Quartz x 12
+Recipe: Raw Quartz (Coal)
+  Input: Reanimated SAM x 1
+  Input: Coal x 24
+  Output: Raw Quartz x 12
+Recipe: Sulfur (Coal)
+  Input: Reanimated SAM x 1
+  Input: Coal x 20
+  Output: Sulfur x 12
+Recipe: Sulfur (Iron)
+  Input: Reanimated SAM x 1
+  Input: Iron Ore x 30
+  Output: Sulfur x 12
+Recipe: Uranium Ore (Bauxite)
+  Input: Reanimated SAM x 1
+  Input: Bauxite x 48
+  Output: Uranium x 12
+Recipe: Turbofuel
+  Input: Fuel x 6000
+  Input: Compacted Coal x 4
+  Output: Turbofuel x 5000
+Recipe: Packaged Turbofuel
+  Input: Turbofuel x 2000
+  Input: Empty Canister x 2
+  Output: Packaged Turbofuel x 2
+Recipe: Unpackage Turbofuel
+  Input: Packaged Turbofuel x 2
+  Output: Turbofuel x 2000
+  Output: Empty Canister x 2
+Recipe: Alternate: Charcoal
+  Input: Wood x 1
+  Output: Coal x 10
+Recipe: Alternate: Biocoal
+  Input: Biomass x 5
+  Output: Coal x 6
+Recipe: Alternate: Compacted Coal
+  Input: Coal x 5
+  Input: Sulfur x 5
+  Output: Compacted Coal x 5
+Recipe: Circuit Board
+  Input: Copper Sheet x 2
+  Input: Plastic x 4
+  Output: Circuit Board x 1
+Recipe: Fuel
+  Input: Crude Oil x 6000
+  Output: Fuel x 4000
+  Output: Polymer Resin x 3
+Recipe: Petroleum Coke
+  Input: Heavy Oil Residue x 4000
+  Output: Petroleum Coke x 12
+Recipe: Plastic
+  Input: Crude Oil x 3000
+  Output: Plastic x 2
+  Output: Heavy Oil Residue x 1000
+Recipe: Rubber
+  Input: Crude Oil x 3000
+  Output: Rubber x 2
+  Output: Heavy Oil Residue x 2000
+Recipe: Residual Fuel
+  Input: Heavy Oil Residue x 6000
+  Output: Fuel x 4000
+Recipe: Residual Plastic
+  Input: Polymer Resin x 6
+  Input: Water x 2000
+  Output: Plastic x 2
+Recipe: Residual Rubber
+  Input: Polymer Resin x 4
+  Input: Water x 4000
+  Output: Rubber x 2
+Recipe: Alternate: Pink Diamonds
+  Input: Coal x 8
+  Input: Quartz Crystal x 3
+  Output: Diamonds x 1
+Recipe: Alternate: Petroleum Diamonds
+  Input: Petroleum Coke x 24
+  Output: Diamonds x 1
+Recipe: Alternate: Oil-Based Diamonds
+  Input: Crude Oil x 10000
+  Output: Diamonds x 2
+Recipe: Alternate: Cloudy Diamonds
+  Input: Coal x 12
+  Input: Limestone x 24
+  Output: Diamonds x 1
+Recipe: Alternate: Dark Matter Trap
+  Input: Time Crystal x 1
+  Input: Dark Matter Residue x 5000
+  Output: Dark Matter Crystal x 2
+Recipe: Alternate: Dark Matter Crystallization
+  Input: Dark Matter Residue x 10000
+  Output: Dark Matter Crystal x 1
+Recipe: Alternate: Wet Concrete
+  Input: Limestone x 6
+  Input: Water x 5000
+  Output: Concrete x 4
+Recipe: Alternate: Turbo Heavy Fuel
+  Input: Heavy Oil Residue x 5000
+  Input: Compacted Coal x 4
+  Output: Turbofuel x 4000
+Recipe: Alternate: Steel Rod
+  Input: Steel Ingot x 1
+  Output: Iron Rod x 4
+Recipe: Steel Beam
+  Input: Steel Ingot x 4
+  Output: Steel Beam x 1
+Recipe: Steel Pipe
+  Input: Steel Ingot x 3
+  Output: Steel Pipe x 2
+Recipe: Steel Ingot
+  Input: Iron Ore x 3
+  Input: Coal x 3
+  Output: Steel Ingot x 3
+Recipe: Versatile Framework
+  Input: Modular Frame x 1
+  Input: Steel Beam x 12
+  Output: Versatile Framework x 2
+Recipe: Alternate: Steel Canister
+  Input: Steel Ingot x 4
+  Output: Empty Canister x 4
+Recipe: Empty Canister
+  Input: Plastic x 2
+  Output: Empty Canister x 4
+Recipe: Packaged Fuel
+  Input: Fuel x 2000
+  Input: Empty Canister x 2
+  Output: Packaged Fuel x 2
+Recipe: Liquid Biofuel
+  Input: Solid Biofuel x 6
+  Input: Water x 3000
+  Output: Liquid Biofuel x 4000
+Recipe: Packaged Liquid Biofuel
+  Input: Liquid Biofuel x 2000
+  Input: Empty Canister x 2
+  Output: Packaged Liquid Biofuel x 2
+Recipe: Packaged Oil
+  Input: Crude Oil x 2000
+  Input: Empty Canister x 2
+  Output: Packaged Oil x 2
+Recipe: Packaged Heavy Oil Residue
+  Input: Heavy Oil Residue x 2000
+  Input: Empty Canister x 2
+  Output: Packaged Heavy Oil Residue x 2
+Recipe: Packaged Water
+  Input: Water x 2000
+  Input: Empty Canister x 2
+  Output: Packaged Water x 2
+Recipe: Unpackage Liquid Biofuel
+  Input: Packaged Liquid Biofuel x 2
+  Output: Liquid Biofuel x 2000
+  Output: Empty Canister x 2
+Recipe: Unpackage Fuel
+  Input: Packaged Fuel x 2
+  Output: Fuel x 2000
+  Output: Empty Canister x 2
+Recipe: Unpackage Oil
+  Input: Packaged Oil x 2
+  Output: Crude Oil x 2000
+  Output: Empty Canister x 2
+Recipe: Unpackage Heavy Oil Residue
+  Input: Packaged Heavy Oil Residue x 2
+  Output: Heavy Oil Residue x 2000
+  Output: Empty Canister x 2
+Recipe: Unpackage Water
+  Input: Packaged Water x 2
+  Output: Water x 2000
+  Output: Empty Canister x 2
+Recipe: Alternate: Steamed Copper Sheet
+  Input: Copper Ingot x 3
+  Input: Water x 3000
+  Output: Copper Sheet x 3
+Recipe: Alternate: Rubber Concrete
+  Input: Limestone x 10
+  Input: Rubber x 2
+  Output: Concrete x 9
+Recipe: Alternate: Recycled Rubber
+  Input: Plastic x 6
+  Input: Fuel x 6000
+  Output: Rubber x 12
+Recipe: Alternate: Pure Quartz Crystal
+  Input: Raw Quartz x 9
+  Input: Water x 5000
+  Output: Quartz Crystal x 7
+Recipe: Quartz Crystal
+  Input: Raw Quartz x 5
+  Output: Quartz Crystal x 3
+Recipe: Alternate: Pure Iron Ingot
+  Input: Iron Ore x 7
+  Input: Water x 4000
+  Output: Iron Ingot x 13
+Recipe: Alternate: Pure Copper Ingot
+  Input: Copper Ore x 6
+  Input: Water x 4000
+  Output: Copper Ingot x 15
+Recipe: Alternate: Pure Caterium Ingot
+  Input: Caterium Ore x 2
+  Input: Water x 2000
+  Output: Caterium Ingot x 1
+Recipe: Alternate: Pure Aluminum Ingot
+  Input: Aluminum Scrap x 2
+  Output: Aluminum Ingot x 1
+Recipe: Aluminum Casing
+  Input: Aluminum Ingot x 3
+  Output: Aluminum Casing x 2
+Recipe: Alclad Aluminum Sheet
+  Input: Aluminum Ingot x 3
+  Input: Copper Ingot x 1
+  Output: Alclad Aluminum Sheet x 3
+Recipe: Alumina Solution
+  Input: Bauxite x 12
+  Input: Water x 18000
+  Output: Alumina Solution x 12000
+  Output: Silica x 5
+Recipe: Aluminum Scrap
+  Input: Alumina Solution x 4000
+  Input: Coal x 2
+  Output: Aluminum Scrap x 6
+  Output: Water x 2000
+Recipe: Packaged Alumina Solution
+  Input: Alumina Solution x 2000
+  Input: Empty Canister x 2
+  Output: Packaged Alumina Solution x 2
+Recipe: Aluminum Ingot
+  Input: Aluminum Scrap x 6
+  Input: Silica x 5
+  Output: Aluminum Ingot x 4
+Recipe: Silica
+  Input: Raw Quartz x 3
+  Output: Silica x 5
+Recipe: Crystal Oscillator
+  Input: Quartz Crystal x 36
+  Input: Cable x 28
+  Input: Reinforced Iron Plate x 5
+  Output: Crystal Oscillator x 2
+Recipe: Unpackage Alumina Solution
+  Input: Packaged Alumina Solution x 2
+  Output: Alumina Solution x 2000
+  Output: Empty Canister x 2
+Recipe: Alternate: Polymer Resin
+  Input: Crude Oil x 6000
+  Output: Polymer Resin x 13
+  Output: Heavy Oil Residue x 2000
+Recipe: Alternate: Plastic Smart Plating
+  Input: Reinforced Iron Plate x 1
+  Input: Rotor x 1
+  Input: Plastic x 3
+  Output: Smart Plating x 2
+Recipe: Alternate: Automated Speed Wiring
+  Input: Stator x 2
+  Input: Wire x 40
+  Input: High-Speed Connector x 1
+  Output: Automated Wiring x 4
+Recipe: Encased Industrial Beam
+  Input: Steel Beam x 3
+  Input: Concrete x 6
+  Output: Encased Industrial Beam x 1
+Recipe: Motor
+  Input: Rotor x 2
+  Input: Stator x 2
+  Output: Motor x 1
+Recipe: Stator
+  Input: Steel Pipe x 3
+  Input: Wire x 8
+  Output: Stator x 1
+Recipe: Automated Wiring
+  Input: Stator x 1
+  Input: Cable x 20
+  Output: Automated Wiring x 1
+Recipe: AI Limiter
+  Input: Copper Sheet x 5
+  Input: Quickwire x 20
+  Output: AI Limiter x 1
+Recipe: Alternate: Heavy Oil Residue
+  Input: Crude Oil x 3000
+  Output: Heavy Oil Residue x 4000
+  Output: Polymer Resin x 2
+Recipe: Alternate: Heavy Flexible Frame
+  Input: Modular Frame x 5
+  Input: Encased Industrial Beam x 3
+  Input: Rubber x 20
+  Input: Screws x 104
+  Output: Heavy Modular Frame x 1
+Recipe: Computer
+  Input: Circuit Board x 4
+  Input: Cable x 8
+  Input: Plastic x 16
+  Output: Computer x 1
+Recipe: Heavy Modular Frame
+  Input: Modular Frame x 5
+  Input: Steel Pipe x 20
+  Input: Encased Industrial Beam x 5
+  Input: Screws x 120
+  Output: Heavy Modular Frame x 1
+Recipe: Modular Engine
+  Input: Motor x 2
+  Input: Rubber x 15
+  Input: Smart Plating x 2
+  Output: Modular Engine x 1
+Recipe: Adaptive Control Unit
+  Input: Automated Wiring x 5
+  Input: Circuit Board x 5
+  Input: Heavy Modular Frame x 1
+  Input: Computer x 2
+  Output: Adaptive Control Unit x 1
+Recipe: Alternate: Fused Wire
+  Input: Copper Ingot x 4
+  Input: Caterium Ingot x 1
+  Output: Wire x 30
+Recipe: Alternate: Flexible Framework
+  Input: Modular Frame x 1
+  Input: Steel Beam x 6
+  Input: Rubber x 8
+  Output: Versatile Framework x 2
+Recipe: Alternate: Electrode Circuit Board
+  Input: Rubber x 4
+  Input: Petroleum Coke x 8
+  Output: Circuit Board x 1
+Recipe: Alternate: Electrode Aluminum Scrap
+  Input: Alumina Solution x 12000
+  Input: Petroleum Coke x 4
+  Output: Aluminum Scrap x 20
+  Output: Water x 7000
+Recipe: Alternate: Diluted Packaged Fuel
+  Input: Heavy Oil Residue x 1000
+  Input: Packaged Water x 2
+  Output: Packaged Fuel x 2
+Recipe: Alternate: Copper Rotor
+  Input: Copper Sheet x 6
+  Input: Screws x 52
+  Output: Rotor x 3
+Recipe: Modular Frame
+  Input: Reinforced Iron Plate x 3
+  Input: Iron Rod x 12
+  Output: Modular Frame x 2
+Recipe: Rotor
+  Input: Iron Rod x 5
+  Input: Screws x 25
+  Output: Rotor x 1
+Recipe: Copper Sheet
+  Input: Copper Ingot x 2
+  Output: Copper Sheet x 1
+Recipe: Smart Plating
+  Input: Reinforced Iron Plate x 1
+  Input: Rotor x 1
+  Output: Smart Plating x 1
+Recipe: Alternate: Copper Alloy Ingot
+  Input: Copper Ore x 5
+  Input: Iron Ore x 5
+  Output: Copper Ingot x 10
+Recipe: Alternate: Coke Steel Ingot
+  Input: Iron Ore x 15
+  Input: Petroleum Coke x 15
+  Output: Steel Ingot x 20
+Recipe: Alternate: Coated Iron Plate
+  Input: Iron Ingot x 5
+  Input: Plastic x 1
+  Output: Iron Plate x 10
+Recipe: Alternate: Coated Iron Canister
+  Input: Iron Plate x 2
+  Input: Copper Sheet x 1
+  Output: Empty Canister x 4
+Recipe: Alternate: Coated Cable
+  Input: Wire x 5
+  Input: Heavy Oil Residue x 2000
+  Output: Cable x 9
+Recipe: Alternate: Bolted Frame
+  Input: Reinforced Iron Plate x 3
+  Input: Screws x 56
+  Output: Modular Frame x 2
+Recipe: Alternate: Adhered Iron Plate
+  Input: Iron Plate x 3
+  Input: Rubber x 1
+  Output: Reinforced Iron Plate x 1
+Recipe: Alternate: Turbo Pressure Motor
+  Input: Motor x 4
+  Input: Pressure Conversion Cube x 1
+  Input: Packaged Nitrogen Gas x 24
+  Input: Stator x 8
+  Output: Turbo Motor x 2
+Recipe: Encased Plutonium Cell
+  Input: Plutonium Pellet x 2
+  Input: Concrete x 4
+  Output: Encased Plutonium Cell x 1
+Recipe: Pressure Conversion Cube
+  Input: Fused Modular Frame x 1
+  Input: Radio Control Unit x 2
+  Output: Pressure Conversion Cube x 1
+Recipe: Nitric Acid
+  Input: Nitrogen Gas x 12000
+  Input: Water x 3000
+  Input: Iron Plate x 1
+  Output: Nitric Acid x 3000
+Recipe: Non-Fissile Uranium
+  Input: Uranium Waste x 15
+  Input: Silica x 10
+  Input: Nitric Acid x 6000
+  Input: Sulfuric Acid x 6000
+  Output: Non-Fissile Uranium x 20
+  Output: Water x 6000
+Recipe: Copper Powder
+  Input: Copper Ingot x 30
+  Output: Copper Powder x 5
+Recipe: Plutonium Pellet
+  Input: Non-Fissile Uranium x 100
+  Input: Uranium Waste x 25
+  Output: Plutonium Pellet x 30
+Recipe: Plutonium Fuel Rod
+  Input: Encased Plutonium Cell x 30
+  Input: Steel Beam x 18
+  Input: Electromagnetic Control Rod x 6
+  Input: Heat Sink x 10
+  Output: Plutonium Fuel Rod x 1
+Recipe: Packaged Nitric Acid
+  Input: Nitric Acid x 1000
+  Input: Empty Fluid Tank x 1
+  Output: Packaged Nitric Acid x 1
+Recipe: Nuclear Pasta
+  Input: Copper Powder x 200
+  Input: Pressure Conversion Cube x 1
+  Output: Nuclear Pasta x 1
+Recipe: Unpackage Nitric Acid
+  Input: Packaged Nitric Acid x 1
+  Output: Nitric Acid x 1000
+  Output: Empty Fluid Tank x 1
+Recipe: Alternate: Turbo Blend Fuel
+  Input: Fuel x 2000
+  Input: Heavy Oil Residue x 4000
+  Input: Sulfur x 3
+  Input: Petroleum Coke x 3
+  Output: Turbofuel x 6000
+Recipe: Encased Uranium Cell
+  Input: Uranium x 10
+  Input: Concrete x 3
+  Input: Sulfuric Acid x 8000
+  Output: Encased Uranium Cell x 5
+  Output: Sulfuric Acid x 2000
+Recipe: Cooling System
+  Input: Heat Sink x 2
+  Input: Rubber x 2
+  Input: Water x 5000
+  Input: Nitrogen Gas x 25000
+  Output: Cooling System x 1
+Recipe: Battery
+  Input: Sulfuric Acid x 2500
+  Input: Alumina Solution x 2000
+  Input: Aluminum Casing x 1
+  Output: Battery x 1
+  Output: Water x 1500
+Recipe: Supercomputer
+  Input: Computer x 4
+  Input: AI Limiter x 2
+  Input: High-Speed Connector x 3
+  Input: Plastic x 28
+  Output: Supercomputer x 1
+Recipe: Radio Control Unit
+  Input: Aluminum Casing x 32
+  Input: Crystal Oscillator x 1
+  Input: Computer x 2
+  Output: Radio Control Unit x 2
+Recipe: Sulfuric Acid
+  Input: Sulfur x 5
+  Input: Water x 5000
+  Output: Sulfuric Acid x 5000
+Recipe: Packaged Sulfuric Acid
+  Input: Sulfuric Acid x 2000
+  Input: Empty Canister x 2
+  Output: Packaged Sulfuric Acid x 2
+Recipe: Assembly Director System
+  Input: Adaptive Control Unit x 2
+  Input: Supercomputer x 1
+  Output: Assembly Director System x 1
+Recipe: High-Speed Connector
+  Input: Quickwire x 56
+  Input: Cable x 10
+  Input: Circuit Board x 1
+  Output: High-Speed Connector x 1
+Recipe: Unpackage Sulfuric Acid
+  Input: Packaged Sulfuric Acid x 1
+  Output: Sulfuric Acid x 1000
+  Output: Empty Canister x 1
+Recipe: Alternate: Super-State Computer
+  Input: Computer x 3
+  Input: Electromagnetic Control Rod x 1
+  Input: Battery x 10
+  Input: Wire x 25
+  Output: Supercomputer x 1
+Recipe: Electromagnetic Control Rod
+  Input: Stator x 3
+  Input: AI Limiter x 2
+  Output: Electromagnetic Control Rod x 2
+Recipe: Uranium Fuel Rod
+  Input: Encased Uranium Cell x 50
+  Input: Encased Industrial Beam x 3
+  Input: Electromagnetic Control Rod x 5
+  Output: Uranium Fuel Rod x 1
+Recipe: Magnetic Field Generator
+  Input: Versatile Framework x 5
+  Input: Electromagnetic Control Rod x 2
+  Output: Magnetic Field Generator x 2
+Recipe: Alternate: Sloppy Alumina
+  Input: Bauxite x 10
+  Input: Water x 10000
+  Output: Alumina Solution x 12000
+Recipe: Alternate: Radio Control System
+  Input: Crystal Oscillator x 1
+  Input: Circuit Board x 10
+  Input: Aluminum Casing x 60
+  Input: Rubber x 30
+  Output: Radio Control Unit x 3
+Recipe: Alternate: Plutonium Fuel Unit
+  Input: Encased Plutonium Cell x 20
+  Input: Pressure Conversion Cube x 1
+  Output: Plutonium Fuel Rod x 1
+Recipe: Alternate: OC Supercomputer
+  Input: Radio Control Unit x 2
+  Input: Cooling System x 2
+  Output: Supercomputer x 1
+Recipe: Heat Sink
+  Input: Alclad Aluminum Sheet x 5
+  Input: Copper Sheet x 3
+  Output: Heat Sink x 1
+Recipe: Fused Modular Frame
+  Input: Heavy Modular Frame x 1
+  Input: Aluminum Casing x 50
+  Input: Nitrogen Gas x 25000
+  Output: Fused Modular Frame x 1
+Recipe: Empty Fluid Tank
+  Input: Aluminum Ingot x 1
+  Output: Empty Fluid Tank x 1
+Recipe: Packaged Nitrogen Gas
+  Input: Nitrogen Gas x 4000
+  Input: Empty Fluid Tank x 1
+  Output: Packaged Nitrogen Gas x 1
+Recipe: Unpackage Nitrogen Gas
+  Input: Packaged Nitrogen Gas x 1
+  Output: Nitrogen Gas x 4000
+  Output: Empty Fluid Tank x 1
+Recipe: Alternate: Instant Scrap
+  Input: Bauxite x 15
+  Input: Coal x 10
+  Input: Sulfuric Acid x 5000
+  Input: Water x 6000
+  Output: Aluminum Scrap x 30
+  Output: Water x 5000
+Recipe: Alternate: Instant Plutonium Cell
+  Input: Non-Fissile Uranium x 150
+  Input: Aluminum Casing x 20
+  Output: Encased Plutonium Cell x 20
+Recipe: Alternate: Heat-Fused Frame
+  Input: Heavy Modular Frame x 1
+  Input: Aluminum Ingot x 50
+  Input: Nitric Acid x 8000
+  Input: Fuel x 10000
+  Output: Fused Modular Frame x 1
+Recipe: Alternate: Fertile Uranium
+  Input: Uranium x 5
+  Input: Uranium Waste x 5
+  Input: Nitric Acid x 3000
+  Input: Sulfuric Acid x 5000
+  Output: Non-Fissile Uranium x 20
+  Output: Water x 8000
+Recipe: Alternate: Electric Motor
+  Input: Electromagnetic Control Rod x 1
+  Input: Rotor x 2
+  Output: Motor x 2
+Recipe: Alternate: Diluted Fuel
+  Input: Heavy Oil Residue x 5000
+  Input: Water x 10000
+  Output: Fuel x 10000
+Recipe: Alternate: Cooling Device
+  Input: Heat Sink x 4
+  Input: Motor x 1
+  Input: Nitrogen Gas x 24000
+  Output: Cooling System x 2
+Recipe: Alternate: Classic Battery
+  Input: Sulfur x 6
+  Input: Alclad Aluminum Sheet x 7
+  Input: Plastic x 8
+  Input: Wire x 12
+  Output: Battery x 4
+Recipe: Alternate: Automated Miner
+  Input: Steel Pipe x 4
+  Input: Iron Plate x 4
+  Output: Portable Miner x 1
+Recipe: Alternate: Alclad Casing
+  Input: Aluminum Ingot x 20
+  Input: Copper Ingot x 10
+  Output: Aluminum Casing x 15
+Recipe: Alternate: Molded Steel Pipe
+  Input: Steel Ingot x 5
+  Input: Concrete x 3
+  Output: Steel Pipe x 5
+Recipe: Alternate: Iron Pipe
+  Input: Iron Ingot x 20
+  Output: Steel Pipe x 5
+Recipe: Alternate: Steel Cast Plate
+  Input: Iron Ingot x 1
+  Input: Steel Ingot x 1
+  Output: Iron Plate x 3
+Recipe: Alternate: Molded Beam
+  Input: Steel Ingot x 24
+  Input: Concrete x 16
+  Output: Steel Beam x 9
+Recipe: Alternate: Aluminum Beam
+  Input: Aluminum Ingot x 3
+  Output: Steel Beam x 3
+Recipe: Alternate: Aluminum Rod
+  Input: Aluminum Ingot x 1
+  Output: Iron Rod x 7
+Recipe: Alternate: Plastic AI Limiter
+  Input: Quickwire x 30
+  Input: Plastic x 7
+  Output: AI Limiter x 2
+Recipe: Alternate: Distilled Silica
+  Input: Dissolved Silica x 12000
+  Input: Limestone x 5
+  Input: Water x 10000
+  Output: Silica x 27
+  Output: Water x 8000
+Recipe: Alternate: Quartz Purification
+  Input: Raw Quartz x 24
+  Input: Nitric Acid x 2000
+  Output: Quartz Crystal x 15
+  Output: Dissolved Silica x 12000
+Recipe: Alternate: Fused Quartz Crystal
+  Input: Raw Quartz x 25
+  Input: Coal x 12
+  Output: Quartz Crystal x 18
+Recipe: Alternate: Leached Iron Ingot
+  Input: Iron Ore x 5
+  Input: Sulfuric Acid x 1000
+  Output: Iron Ingot x 10
+Recipe: Alternate: Basic Iron Ingot
+  Input: Iron Ore x 5
+  Input: Limestone x 8
+  Output: Iron Ingot x 10
+Recipe: Alternate: Tempered Copper Ingot
+  Input: Copper Ore x 5
+  Input: Petroleum Coke x 8
+  Output: Copper Ingot x 12
+Recipe: Alternate: Leached Copper Ingot
+  Input: Copper Ore x 9
+  Input: Sulfuric Acid x 5000
+  Output: Copper Ingot x 22
+Recipe: Alternate: Tempered Caterium Ingot
+  Input: Caterium Ore x 6
+  Input: Petroleum Coke x 2
+  Output: Caterium Ingot x 3
+Recipe: Alternate: Leached Caterium Ingot
+  Input: Caterium Ore x 9
+  Input: Sulfuric Acid x 5000
+  Output: Caterium Ingot x 6
+Recipe: Alternate: Caterium Wire
+  Input: Caterium Ingot x 1
+  Output: Wire x 8
+Recipe: Alternate: Iron Wire
+  Input: Iron Ingot x 5
+  Output: Wire x 9
+Recipe: Alternate: Infused Uranium Cell
+  Input: Uranium x 5
+  Input: Silica x 3
+  Input: Sulfur x 5
+  Input: Quickwire x 15
+  Output: Encased Uranium Cell x 4
+Recipe: Caterium Ingot
+  Input: Caterium Ore x 3
+  Output: Caterium Ingot x 1
+Recipe: Alternate: Turbo Electric Motor
+  Input: Motor x 7
+  Input: Radio Control Unit x 9
+  Input: Electromagnetic Control Rod x 5
+  Input: Rotor x 7
+  Output: Turbo Motor x 3
+Recipe: Turbo Motor
+  Input: Cooling System x 4
+  Input: Radio Control Unit x 2
+  Input: Motor x 4
+  Input: Rubber x 24
+  Output: Turbo Motor x 1
+Recipe: Thermal Propulsion Rocket
+  Input: Modular Engine x 5
+  Input: Turbo Motor x 2
+  Input: Cooling System x 6
+  Input: Fused Modular Frame x 2
+  Output: Thermal Propulsion Rocket x 2
+Recipe: Alternate: Quickwire Stator
+  Input: Steel Pipe x 4
+  Input: Quickwire x 15
+  Output: Stator x 2
+Recipe: Alternate: Cheap Silica
+  Input: Raw Quartz x 3
+  Input: Limestone x 5
+  Output: Silica x 7
+Recipe: Alternate: Steel Screws
+  Input: Steel Beam x 1
+  Output: Screws x 52
+Recipe: Alternate: Cast Screws
+  Input: Iron Ingot x 5
+  Output: Screws x 20
+Recipe: Alternate: Steel Rotor
+  Input: Steel Pipe x 2
+  Input: Wire x 6
+  Output: Rotor x 1
+Recipe: Alternate: Encased Industrial Pipe
+  Input: Steel Pipe x 6
+  Input: Concrete x 5
+  Output: Encased Industrial Beam x 1
+Recipe: Alternate: Stitched Iron Plate
+  Input: Iron Plate x 10
+  Input: Wire x 20
+  Output: Reinforced Iron Plate x 3
+Recipe: Alternate: Bolted Iron Plate
+  Input: Iron Plate x 18
+  Input: Screws x 50
+  Output: Reinforced Iron Plate x 3
+Recipe: Alternate: Radio Connection Unit
+  Input: Heat Sink x 4
+  Input: High-Speed Connector x 2
+  Input: Quartz Crystal x 12
+  Output: Radio Control Unit x 1
+Recipe: Alternate: Fused Quickwire
+  Input: Caterium Ingot x 1
+  Input: Copper Ingot x 5
+  Output: Quickwire x 12
+Recipe: Alternate: Recycled Plastic
+  Input: Rubber x 6
+  Input: Fuel x 6000
+  Output: Plastic x 12
+Recipe: Alternate: Uranium Fuel Unit
+  Input: Encased Uranium Cell x 100
+  Input: Electromagnetic Control Rod x 10
+  Input: Crystal Oscillator x 3
+  Input: Rotor x 10
+  Output: Uranium Fuel Rod x 3
+Recipe: Alternate: Rigor Motor
+  Input: Rotor x 3
+  Input: Stator x 3
+  Input: Crystal Oscillator x 1
+  Output: Motor x 6
+Recipe: Alternate: Steeled Frame
+  Input: Reinforced Iron Plate x 2
+  Input: Steel Pipe x 10
+  Output: Modular Frame x 3
+Recipe: Alternate: Compacted Steel Ingot
+  Input: Iron Ore x 2
+  Input: Compacted Coal x 1
+  Output: Steel Ingot x 4
+Recipe: Alternate: Solid Steel Ingot
+  Input: Iron Ingot x 2
+  Input: Coal x 2
+  Output: Steel Ingot x 3
+Recipe: Alternate: Iron Alloy Ingot
+  Input: Iron Ore x 8
+  Input: Copper Ore x 2
+  Output: Iron Ingot x 15
+Recipe: Alternate: Silicon High-Speed Connector
+  Input: Quickwire x 60
+  Input: Silica x 25
+  Input: Circuit Board x 2
+  Output: High-Speed Connector x 2
+Recipe: Alternate: Heavy Encased Frame
+  Input: Modular Frame x 8
+  Input: Encased Industrial Beam x 10
+  Input: Steel Pipe x 36
+  Input: Concrete x 22
+  Output: Heavy Modular Frame x 3
+Recipe: Alternate: Heat Exchanger
+  Input: Aluminum Casing x 3
+  Input: Rubber x 3
+  Output: Heat Sink x 1
+Recipe: Alternate: Fine Black Powder
+  Input: Sulfur x 1
+  Input: Compacted Coal x 2
+  Output: Black Powder x 6
+Recipe: Alternate: Electromagnetic Connection Rod
+  Input: Stator x 2
+  Input: High-Speed Connector x 1
+  Output: Electromagnetic Control Rod x 2
+Recipe: Alternate: Insulated Crystal Oscillator
+  Input: Quartz Crystal x 10
+  Input: Rubber x 7
+  Input: AI Limiter x 1
+  Output: Crystal Oscillator x 1
+Recipe: Alternate: Fine Concrete
+  Input: Silica x 3
+  Input: Limestone x 12
+  Output: Concrete x 10
+Recipe: Alternate: Crystal Computer
+  Input: Circuit Board x 3
+  Input: Crystal Oscillator x 1
+  Output: Computer x 2
+Recipe: Alternate: Caterium Computer
+  Input: Circuit Board x 4
+  Input: Quickwire x 14
+  Input: Rubber x 6
+  Output: Computer x 1
+Recipe: Alternate: Caterium Circuit Board
+  Input: Plastic x 10
+  Input: Quickwire x 30
+  Output: Circuit Board x 7
+Recipe: Alternate: Silicon Circuit Board
+  Input: Copper Sheet x 11
+  Input: Silica x 11
+  Output: Circuit Board x 5
+Recipe: Alternate: Quickwire Cable
+  Input: Quickwire x 3
+  Input: Rubber x 2
+  Output: Cable x 11
+Recipe: Alternate: Insulated Cable
+  Input: Wire x 9
+  Input: Rubber x 6
+  Output: Cable x 20
+Recipe: Ficsonium
+  Input: Plutonium Waste x 1
+  Input: Singularity Cell x 1
+  Input: Dark Matter Residue x 20000
+  Output: Ficsonium x 1
+Recipe: Ficsonium Fuel Rod
+  Input: Ficsonium x 2
+  Input: Electromagnetic Control Rod x 2
+  Input: Ficsite Trigon x 40
+  Input: Excited Photonic Matter x 20000
+  Output: Ficsonium Fuel Rod x 1
+  Output: Dark Matter Residue x 20000
+Recipe: Singularity Cell
+  Input: Nuclear Pasta x 1
+  Input: Dark Matter Crystal x 20
+  Input: Iron Plate x 100
+  Input: Concrete x 200
+  Output: Singularity Cell x 10
+Recipe: Ballistic Warp Drive
+  Input: Thermal Propulsion Rocket x 1
+  Input: Singularity Cell x 5
+  Input: Superposition Oscillator x 2
+  Input: Dark Matter Crystal x 40
+  Output: Ballistic Warp Drive x 1
+Recipe: Iodine-Infused Filter
+  Input: Gas Filter x 1
+  Input: Quickwire x 8
+  Input: Aluminum Casing x 1
+  Output: Iodine-Infused Filter x 1
+Recipe: Quickwire
+  Input: Caterium Ingot x 1
+  Output: Quickwire x 5
+Recipe: Solid Biofuel
+  Input: Biomass x 8
+  Output: Solid Biofuel x 4
+Recipe: Hog Protein
+  Input: Hog Remains x 1
+  Output: Alien Protein x 1
+Recipe: Spitter Protein
+  Input: Spitter Remains x 1
+  Output: Alien Protein x 1
+Recipe: Biomass (Mycelia)
+  Input: Mycelia x 1
+  Output: Biomass x 10
+Recipe: Power Shard (1)
+  Input: Blue Power Slug x 1
+  Output: Power Shard x 1
+Recipe: Black Powder
+  Input: Coal x 1
+  Input: Sulfur x 1
+  Output: Black Powder x 2
+Recipe: Stinger Protein
+  Input: Stinger Remains x 1
+  Output: Alien Protein x 1
+Recipe: Hatcher Protein
+  Input: Hatcher Remains x 1
+  Output: Alien Protein x 1
+Recipe: Alien DNA Capsule
+  Input: Alien Protein x 1
+  Output: Alien DNA Capsule x 1
+Recipe: Biomass (Alien Protein)
+  Input: Alien Protein x 1
+  Output: Biomass x 100
+Recipe: Iron Rebar
+  Input: Iron Rod x 1
+  Output: Iron Rebar x 1
+Recipe: Alien Power Matrix
+  Input: SAM Fluctuator x 5
+  Input: Power Shard x 3
+  Input: Superposition Oscillator x 3
+  Input: Excited Photonic Matter x 24000
+  Output: Alien Power Matrix x 1
+  Output: Dark Matter Residue x 24000
+Recipe: Homing Rifle Ammo
+  Input: Rifle Ammo x 20
+  Input: High-Speed Connector x 1
+  Output: Homing Rifle Ammo x 10
+Recipe: Stun Rebar
+  Input: Iron Rebar x 1
+  Input: Quickwire x 5
+  Output: Stun Rebar x 1
+Recipe: Gas Filter
+  Input: Fabric x 2
+  Input: Coal x 4
+  Input: Iron Plate x 2
+  Output: Gas Filter x 1
+Recipe: Gas Nobelisk
+  Input: Nobelisk x 1
+  Input: Biomass x 10
+  Output: Gas Nobelisk x 1
+Recipe: Alternate: Polyester Fabric
+  Input: Polymer Resin x 1
+  Input: Water x 1000
+  Output: Fabric x 1
+Recipe: Fabric
+  Input: Mycelia x 1
+  Input: Biomass x 5
+  Output: Fabric x 1
+Recipe: Synthetic Power Shard
+  Input: Time Crystal x 2
+  Input: Dark Matter Crystal x 2
+  Input: Quartz Crystal x 12
+  Input: Excited Photonic Matter x 12000
+  Output: Power Shard x 1
+  Output: Dark Matter Residue x 12000
+Recipe: Power Shard (5)
+  Input: Purple Power Slug x 1
+  Output: Power Shard x 5
+Recipe: Power Shard (2)
+  Input: Yellow Power Slug x 1
+  Output: Power Shard x 2
+Recipe: Pulse Nobelisk
+  Input: Nobelisk x 5
+  Input: Crystal Oscillator x 1
+  Output: Pulse Nobelisk x 5
+Recipe: Shatter Rebar
+  Input: Iron Rebar x 2
+  Input: Quartz Crystal x 3
+  Output: Shatter Rebar x 1
+Recipe: Turbo Rifle Ammo
+  Input: Rifle Ammo x 25
+  Input: Aluminum Casing x 3
+  Input: Packaged Turbofuel x 3
+  Output: Turbo Rifle Ammo x 50
+Recipe: Turbo Rifle Ammo
+  Input: Rifle Ammo x 25
+  Input: Aluminum Casing x 3
+  Input: Turbofuel x 3000
+  Output: Turbo Rifle Ammo x 50
+Recipe: Nuke Nobelisk
+  Input: Nobelisk x 5
+  Input: Encased Uranium Cell x 20
+  Input: Smokeless Powder x 10
+  Input: AI Limiter x 6
+  Output: Nuke Nobelisk x 1
+Recipe: Rifle Ammo
+  Input: Copper Sheet x 3
+  Input: Smokeless Powder x 2
+  Output: Rifle Ammo x 15
+Recipe: Explosive Rebar
+  Input: Iron Rebar x 2
+  Input: Smokeless Powder x 2
+  Input: Steel Pipe x 2
+  Output: Explosive Rebar x 1
+Recipe: Cluster Nobelisk
+  Input: Nobelisk x 3
+  Input: Smokeless Powder x 4
+  Output: Cluster Nobelisk x 1
+Recipe: Nobelisk
+  Input: Black Powder x 2
+  Input: Steel Pipe x 2
+  Output: Nobelisk x 1
+Recipe: Smokeless Powder
+  Input: Black Powder x 2
+  Input: Heavy Oil Residue x 1000
+  Output: Smokeless Powder x 2
+Recipe: FICSMAS Wreath
+  Input: FICSMAS Tree Branch x 15
+  Input: FICSMAS Ornament Bundle x 6
+  Output: FICSMAS Wreath x 2
+Recipe: Snowball
+  Input: FICSMAS Actual Snow x 3
+  Output: Snowball x 1
+Recipe: FICSMAS Wonder Star
+  Input: FICSMAS Wreath x 5
+  Input: Candy Cane x 20
+  Output: FICSMAS Wonder Star x 1
+Recipe: Copper FICSMAS Ornament
+  Input: Red FICSMAS Ornament x 2
+  Input: Copper Ingot x 2
+  Output: Copper FICSMAS Ornament x 1
+Recipe: Iron FICSMAS Ornament
+  Input: Blue FICSMAS Ornament x 3
+  Input: Iron Ingot x 3
+  Output: Iron FICSMAS Ornament x 1
+Recipe: FICSMAS Ornament Bundle
+  Input: Copper FICSMAS Ornament x 1
+  Input: Iron FICSMAS Ornament x 1
+  Output: FICSMAS Ornament Bundle x 1
+Recipe: Red FICSMAS Ornament
+  Input: FICSMAS Gift x 1
+  Output: Red FICSMAS Ornament x 1
+Recipe: Blue FICSMAS Ornament
+  Input: FICSMAS Gift x 1
+  Output: Blue FICSMAS Ornament x 2
+Recipe: FICSMAS Actual Snow
+  Input: FICSMAS Gift x 5
+  Output: FICSMAS Actual Snow x 2
+Recipe: FICSMAS Tree Branch
+  Input: FICSMAS Gift x 1
+  Output: FICSMAS Tree Branch x 1
+Recipe: FICSMAS Bow
+  Input: FICSMAS Gift x 2
+  Output: FICSMAS Bow x 1
+Recipe: Candy Cane
+  Input: FICSMAS Gift x 3
+  Output: Candy Cane x 1
+Recipe: Biomass (Leaves)
+  Input: Leaves x 10
+  Output: Biomass x 5
+Recipe: Biomass (Wood)
+  Input: Wood x 4
+  Output: Biomass x 20
+Recipe: Reinforced Iron Plate
+  Input: Iron Plate x 6
+  Input: Screws x 12
+  Output: Reinforced Iron Plate x 1
+Recipe: Concrete
+  Input: Limestone x 3
+  Output: Concrete x 1
+Recipe: Screws
+  Input: Iron Rod x 1
+  Output: Screws x 4
+Recipe: Cable
+  Input: Wire x 2
+  Output: Cable x 1
+Recipe: Wire
+  Input: Copper Ingot x 1
+  Output: Wire x 2
+Recipe: Copper Ingot
+  Input: Copper Ore x 1
+  Output: Copper Ingot x 1
+Recipe: Sweet Fireworks
+  Input: FICSMAS Tree Branch x 6
+  Input: Candy Cane x 3
+  Output: Sweet Fireworks x 1
+Recipe: Fancy Fireworks
+  Input: FICSMAS Tree Branch x 4
+  Input: FICSMAS Bow x 3
+  Output: Fancy Fireworks x 1
+Recipe: Sparkly Fireworks
+  Input: FICSMAS Tree Branch x 3
+  Input: FICSMAS Actual Snow x 2
+  Output: Sparkly Fireworks x 1
+Resource weights: [("OreBauxite", 7.487804878048781), ("OreGold", 6.14), ("Coal", 2.1773049645390072), ("OreCopper", 2.4959349593495936), ("LiquidOil", 7.309523809523809), ("OreIron", 1.0), ("Stone", 1.3175965665236051), ("NitrogenGas", 7.675), ("RawQuartz", 6.822222222222222), ("Sulfur", 8.527777777777779), ("OreUranium", 43.857142857142854), ("SAM", 9.029411764705882), ("Water", 0.0), ("QuantumEnergy", 0.0), ("DarkEnergy", 0.0)]
+Item                             |         WP
+---------------------------------------------
+AI Expansion Server              |  3987.5884
+AI Limiter                       |    83.3637
+Adaptive Control Unit            |  1300.7774
+Alclad Aluminum Sheet            |    20.4240
+Alien Power Matrix               |  5555.2966
+Alumina Solution                 |     0.0133
+Aluminum Casing                  |    28.0450
+Aluminum Ingot                   |    19.2044
+Aluminum Scrap                   |     9.6022
+Assembly Director System         |  3976.5084
+Automated Wiring                 |    72.0192
+Battery                          |    75.9938
+Bauxite                          |    15.9776
+Biochemical Sculptor             |  1987.8130
+Black Powder                     |     4.9897
+Cable                            |     2.3589
+Caterium Ingot                   |    20.7484
+Caterium Ore                     |    10.3742
+Circuit Board                    |    17.7702
+Coal                             |     2.1773
+Compacted Coal                   |    10.7051
+Computer                         |   155.0268
+Concrete                         |     6.6429
+Cooling System                   |   420.3586
+Copper Ingot                     |     3.6587
+Copper Ore                       |     9.1468
+Copper Powder                    |    21.9524
+Copper Sheet                     |     3.6587
+Crystal Oscillator               |   256.7429
+Dark Matter Crystal              |    88.6932
+Dark Matter Residue              |     0.0181
+DarkEnergy                       |     0.0000
+Diamonds                         |    43.5461
+Dissolved Silica                 |     0.0239
+Electromagnetic Control Rod      |   120.4496
+Empty Canister                   |     2.9323
+Empty Fluid Tank                 |    19.2044
+Encased Industrial Beam          |    84.6341
+Encased Uranium Cell             |   109.8245
+Excited Photonic Matter          |     0.0000
+Ficsite Ingot                    |   149.0529
+Ficsite Trigon                   |    49.6843
+Fused Modular Frame              |  2278.6278
+Heat Sink                        |   113.0961
+Heavy Modular Frame              |   541.7765
+High-Speed Connector             |   170.6085
+Iron Ingot                       |     6.3926
+Iron Ore                         |    11.8720
+Iron Plate                       |     4.0353
+Iron Rebar                       |     1.4283
+Iron Rod                         |     1.4283
+Limestone                        |     4.4311
+LiquidOil                        |     7.3095
+Magnetic Field Generator         |   459.1916
+Modular Frame                    |    40.5409
+Motor                            |    67.1166
+Neural-Quantum Processor         |  2555.6791
+Nitric Acid                      |     0.0549
+Nitrogen Gas                     |     0.0134
+NitrogenGas                      |     7.6750
+Nobelisk                         |    27.1192
+Nuclear Pasta                    |  8133.3363
+OreBauxite                       |     7.4878
+OreCopper                        |     2.4959
+OreGold                          |     6.1400
+OreIron                          |     1.0000
+OreUranium                       |    43.8571
+Packaged Alumina Solution        |    16.2470
+Packaged Nitric Acid             |    74.0856
+Packaged Nitrogen Gas            |    72.7405
+Packaged Sulfuric Acid           |    11.4601
+Packaged Water                   |     2.9323
+Portable Miner                   |    50.4209
+Power Shard                      |   465.1931
+Pressure Conversion Cube         |  3742.8649
+Pulse Nobelisk                   |    78.4677
+QuantumEnergy                    |     0.0000
+Quartz Crystal                   |     9.4685
+Quickwire                        |     3.2535
+Radio Control Unit               |   732.1185
+Raw Quartz                       |     7.3644
+RawQuartz                        |     6.8222
+Reanimated SAM                   |    36.1176
+Reinforced Iron Plate            |    21.3140
+Rotor                            |    13.5068
+SAM                              |     9.0294
+SAM Fluctuator                   |   248.3129
+Screws                           |     0.3571
+Shatter Rebar                    |    31.2622
+Silica                           |     4.4186
+Singularity Cell                 |  1163.9312
+Smart Plating                    |    34.8208
+Stator                           |    35.1453
+Steel Beam                       |    19.2044
+Steel Ingot                      |     5.7133
+Steel Pipe                       |     8.5699
+Stone                            |     1.3176
+Stun Rebar                       |    17.6958
+Sulfur                           |     8.5278
+Sulfuric Acid                    |     0.0085
+Supercomputer                    |  1374.9536
+Superposition Oscillator         |   972.7177
+Time Crystal                     |    87.0922
+Turbo Motor                      |  2585.2262
+Uranium                          |    66.9201
+Uranium Fuel Rod                 |  4364.0806
+Versatile Framework              |   135.4968
+Water                            |     0.0000
+Wire                             |     1.1794
+test model::tests::test_print_item_weight_points ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 2 filtered out; finished in 0.72s
+

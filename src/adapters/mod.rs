@@ -1,4 +1,5 @@
 pub mod satisfactory_adapter;
+pub mod satisfactory_asset;
 pub mod factorio_adapter;
 pub mod dsp_adapter;
 
