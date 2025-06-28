@@ -59,7 +59,6 @@ pub fn load_satisfactory_recipes_from_json(json_str: &str) -> Result<Vec<Recipe>
         .values()
         .flat_map(|v| v.iter()
             .filter(|r| !r.produced_in.is_empty())
-            .filter(|r| !r.produced_in.iter().any(|m| m == "Desc_Converter_C"))
             .map(satisfactory_json_to_recipe))
         .collect();
     Ok(recipes)

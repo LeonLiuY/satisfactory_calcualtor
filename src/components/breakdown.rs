@@ -1,3 +1,4 @@
+use crate::components::raw_resource::is_raw_resource;
 use leptos::prelude::*;
 use std::collections::HashSet;
 use crate::model::recipe::Recipe;
@@ -40,6 +41,17 @@ pub fn BreakdownView(
                 product: product.to_string(),
                 rate,
                 recipe_name: Some("Cycle".to_string()),
+                machine: None,
+                machines_needed: None,
+                children: vec![],
+            };
+        }
+        // Stop recursion at raw resources
+        if is_raw_resource(product) {
+            return BreakdownNode {
+                product: product.to_string(),
+                rate,
+                recipe_name: None,
                 machine: None,
                 machines_needed: None,
                 children: vec![],
