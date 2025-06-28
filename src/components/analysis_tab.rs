@@ -1,6 +1,6 @@
 use leptos::prelude::*;
 use std::collections::{HashMap, HashSet};
-use crate::recipe::Recipe;
+use crate::model::recipe::Recipe;
 use crate::Store;
 use crate::AppStoreStoreFields;
 

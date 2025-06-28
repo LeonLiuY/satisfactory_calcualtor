@@ -2,7 +2,7 @@
 // (No need to pub use crate::satisfactory_adapter;)
 
 // Satisfactory adapter logic moved from adapters.rs
-use crate::recipe::{Recipe, ItemStack, CraftingMachine};
+use crate::model::recipe::{Recipe, ItemStack, CraftingMachine};
 use serde::Deserialize;
 
 #[derive(Debug, Deserialize)]
@@ -71,7 +71,8 @@ mod tests {
     #[test]
     fn test_print_recipe_table() {
         let path = "assets/satisfactory_recipes.json";
-        let mut recipes = load_satisfactory_recipes_from_json(path).expect("Failed to load recipes");
+        let json_str = std::fs::read_to_string(path).expect("Failed to read JSON file");
+        let mut recipes = load_satisfactory_recipes_from_json(&json_str).expect("Failed to load recipes");
         recipes.sort_by(|a, b| {
             let a_name = a.outputs.get(0).map(|o| o.item.as_str()).unwrap_or("");
             let b_name = b.outputs.get(0).map(|o| o.item.as_str()).unwrap_or("");

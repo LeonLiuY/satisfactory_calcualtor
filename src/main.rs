@@ -1,13 +1,13 @@
 use leptos::{logging::log, mount::mount_to_body, prelude::*};
 pub mod adapters;
 mod components;
-mod recipe;
+mod model;
 
 use adapters::satisfactory_adapter::load_satisfactory_recipes_from_json;
 use components::factory_planner_app::FactoryPlannerApp;
 use reactive_stores::Store;
 
-use crate::recipe::Recipe;
+use crate::model::recipe::Recipe;
 
 #[derive(Default, Store, Clone)]
 struct AppStore {
