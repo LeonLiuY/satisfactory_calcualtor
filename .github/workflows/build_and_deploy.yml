@@ -11,14 +11,21 @@ jobs:
       - uses: DeterminateSystems/nix-installer-action@main
       - uses: DeterminateSystems/magic-nix-cache-action@main
       - uses: DeterminateSystems/flake-checker-action@main
-      - name: Build
-        run: nix develop --command "build"
+      - run: nix develop --command "build"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist
 
   deploy:
     runs-on: ubuntu-latest
     needs: build
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist
       - name: Build & Deploy Worker
         uses: cloudflare/wrangler-action@v3
         with:
