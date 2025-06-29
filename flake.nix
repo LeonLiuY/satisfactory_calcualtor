@@ -35,7 +35,8 @@
 
         devShells.default = let
           buildScript = pkgs.writeScriptBin "build" ''
-            npm install
+            npm ci
+            npx tsc
             trunk build --release
           '';
         in pkgs.mkShell {

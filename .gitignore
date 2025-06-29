@@ -1,5 +1,6 @@
 .direnv/
 dist/
+ts-dist/
 # Added by cargo
 
 /target

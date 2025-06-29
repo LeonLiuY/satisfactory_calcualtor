@@ -1,0 +1,19 @@
+{
+  "name": "Satisfactory Calculator",
+  "short_name": "SatisfactoryCalculator",
+  "start_url": ".",
+  "display": "standalone",
+  "description": "A Leptos-based factory planner for factory-building games.",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
