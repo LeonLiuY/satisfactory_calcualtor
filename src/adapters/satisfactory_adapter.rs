@@ -139,27 +139,10 @@ pub fn build_display_name_map_from_assets(assets: &[SatisfactoryAsset]) -> HashM
 }
 
 fn calc_quantity(item_name: String, amount: u32) -> u32 {
-    // const FLUIDS: [&str; 15] = [
-    //     "Crude Oil",
-    //     "Water",
-    //     "Fuel",
-    //     "Heavy Oil Residue",
-    //     "Nitrogen Gas",
-    //     "Excited Photonic Matter",
-    //     "Dark Matter Residue",
-    //     "Nitric Acid",
-    //     "Sulfuric Acid",
-    //     "Turbofuel",
-    //     "Liquid Biofuel",
-    //     "Alumina Solution",
-    //     "Rocket Fuel",
-    //     "Ionized Fuel",
-    //     "Dissolved Silica"
-    // ];
-    if amount >= 1000 {
+    if amount >= 1000 { //fluids
         amount / 1000
     } else {
-        amount // For all other items, use the given amount
+        amount
     }
 }
 
@@ -209,7 +192,7 @@ pub fn load_satisfactory_recipes_from_json(
                     .unwrap_or_default();
                 let time = class.m_manufactoring_duration.unwrap_or(1.0);
                 recipes.push(Recipe {
-                    name: recipe_display,
+                    name: recipe_display.clone(),
                     inputs: inputs
                         .iter()
                         .map(|ing| {
@@ -238,7 +221,7 @@ pub fn load_satisfactory_recipes_from_json(
                         .collect(),
                     machine: CraftingMachine { name: machine_name },
                     time: (time * 1000.0) as u32,
-                    enabled: true,
+                    enabled: recipe_display.starts_with("Alternate") == false, // Default: alternate recipes are disabled
                 });
             }
         }
