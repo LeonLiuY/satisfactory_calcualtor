@@ -1,5 +1,5 @@
 use leptos::prelude::*;
-use crate::{components::breakdown::BreakdownView, AppStore, AppStoreStoreFields};
+use crate::{components::breakdown::BreakdownView, model::{AppStore, AppStoreStoreFields}};
 use reactive_stores::Store;
 
 #[component]

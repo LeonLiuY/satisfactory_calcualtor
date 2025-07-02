@@ -1,10 +1,10 @@
 use leptos::prelude::*;
-use crate::Store;
-use crate::AppStoreStoreFields;
+use reactive_stores::Store;
+use crate::model::{AppStore, AppStoreStoreFields};
 
 #[component]
 pub fn RecipesTab() -> impl IntoView {
-    let store = use_context::<Store<crate::AppStore>>().expect("AppStore context");
+    let store = use_context::<Store<AppStore>>().expect("AppStore context");
     let recipe_output_filter = RwSignal::new(String::new());
     let set_recipe_output_filter = recipe_output_filter.write_only();
     view! {

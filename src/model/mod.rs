@@ -2,10 +2,15 @@ pub mod recipe;
 
 use std::{io::{self, Write}, vec};
 
+use reactive_stores::Store;
+
 use crate::model::recipe::Recipe;
 
-/// An empty function for testing purposes.
-pub fn empty_function() {}
+#[derive(Default, Store, Clone)]
+pub struct AppStore {
+    #[store(key: String = |recipe| recipe.name.clone())]
+    pub recipes: Vec<Recipe>,
+}
 
 /// Raw resource availability and WP assignment (copied from analysis_tab.rs)
 pub const RESOURCE_AVAIL: [(&str, f64); 15] = [
@@ -189,11 +194,6 @@ mod tests {
     use crate::adapters::satisfactory_adapter::load_satisfactory_recipes_from_json;
     use super::*;
     #[test]
-    fn test_empty_function() {
-        empty_function();
-        // No assertion needed for an empty function
-    }
-    #[test]
     fn test_print_item_analysis() {
         use crate::adapters::satisfactory_adapter::build_machine_power_map_from_assets;
         let path = "assets/satisfactory_en-US.json";
@@ -211,17 +211,5 @@ mod tests {
             let power_str = if analysis.power == f64::INFINITY { "-∞".to_string() } else { format!("{:.2}", analysis.power) };
             println!("{:<32} | {:>10} | {:>15}", item, wp_str, power_str);
         }
-    }
-    #[test]
-    fn test_write_item_analysis_json() {
-        use crate::adapters::satisfactory_adapter::build_machine_power_map_from_assets;
-        let path = "assets/satisfactory_en-US.json";
-        let json_str = std::fs::read_to_string(path).expect("Failed to read JSON file");
-        let recipes = load_satisfactory_recipes_from_json(&json_str).expect("Failed to load recipes");
-        let assets: Vec<crate::adapters::satisfactory_asset::SatisfactoryAsset> = serde_json::from_str(&json_str).expect("Failed to parse JSON");
-        let machine_power_map = build_machine_power_map_from_assets(&assets);
-        let item_analysis = compute_item_analysis(&recipes, &machine_power_map);
-        let json = json5::to_string(&item_analysis).expect("Failed to serialize item analysis to JSON5");
-        std::fs::write("assets/satisfactory_item_analysis.json5", json).expect("Failed to write item_analysis.json");
     }
 }

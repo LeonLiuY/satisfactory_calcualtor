@@ -1,10 +1,9 @@
 use leptos::prelude::*;
 use once_cell::sync::Lazy;
+use reactive_stores::Store;
 use std::collections::HashMap;
 use std::sync::Arc;
-use crate::model::{recipe::Recipe, ItemAnalysis};
-use crate::Store;
-use crate::AppStoreStoreFields;
+use crate::model::{recipe::Recipe, AppStore, AppStoreStoreFields, ItemAnalysis};
 use leptos::prelude::RwSignal;
 use json5;
 
@@ -23,9 +22,8 @@ enum SortColumn {
 
 #[component]
 pub fn AnalysisTab() -> impl IntoView {
-    let store = use_context::<Store<crate::AppStore>>().expect("AppStore context");
+    let store = use_context::<Store<AppStore>>().expect("AppStore context");
     let recipes = store.recipes().get_untracked();
-    let machine_power_map = store.machine_power_map().get_untracked();
     // Map from output item to Vec<Recipe>
     let mut recipes_by_output: HashMap<String, Vec<Recipe>> = HashMap::new();
     for recipe in recipes.iter() {

@@ -138,7 +138,7 @@ pub fn build_display_name_map_from_assets(assets: &[SatisfactoryAsset]) -> HashM
     map
 }
 
-fn calc_quantity(item_name: String, amount: u32) -> u32 {
+fn calc_quantity(amount: u32) -> u32 {
     if amount >= 1000 { //fluids
         amount / 1000
     } else {
@@ -202,7 +202,7 @@ pub fn load_satisfactory_recipes_from_json(
                                 .unwrap();
                             ItemStack {
                                 item: item_name.clone(),
-                                quantity: calc_quantity(item_name, ing.amount.round() as u32),
+                                quantity: calc_quantity( ing.amount.round() as u32),
                             }
                         })
                         .collect(),
@@ -215,7 +215,7 @@ pub fn load_satisfactory_recipes_from_json(
                                 .unwrap();
                             ItemStack {
                                 item: item_name.clone(),
-                                quantity: calc_quantity(item_name, prod.amount.round() as u32),
+                                quantity: calc_quantity( prod.amount.round() as u32),
                             }
                         })
                         .collect(),
